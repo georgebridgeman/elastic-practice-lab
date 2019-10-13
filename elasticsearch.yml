@@ -1,0 +1,8 @@
+cluster.name: elastic-lab
+
+node.name: ${HOSTNAME}
+
+network.host: _eth1_
+
+discovery.seed_hosts: ["node1", "node2", "node3"]
+cluster.initial_master_nodes: ["node1"]
