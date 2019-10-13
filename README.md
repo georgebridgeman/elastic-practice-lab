@@ -12,6 +12,14 @@ These two archives are required:
 - [Elasticsearch 7.4.0](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz)
 - [Kibana 7.4.0](https://artifacts.elastic.co/downloads/kibana/kibana-7.4.0-linux-x86_64.tar.gz)
 
+### Settings summary
+- Each VM is given 1G RAM.
+- Elasticsearch is configured (in `jvm.options`) with a 512M heap - [50% available RAM](https://www.elastic.co/guide/en/elasticsearch/reference/current/heap-size.html).
+- The number of file descriptors [is increased](https://www.elastic.co/guide/en/elasticsearch/reference/current/file-descriptors.html).
+- The number of threads [is increased](https://www.elastic.co/guide/en/elasticsearch/reference/current/max-number-of-threads.html).
+- The `mmap` count limit [is increased](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html).
+- [Disable swapping](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration-memory.html#swappiness)
+
 ### Running
 - Install VirtualBox
 - Install Vagrant
